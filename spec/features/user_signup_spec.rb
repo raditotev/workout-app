@@ -2,7 +2,7 @@ require "rails_helper"
 
 RSpec.feature "User Signup" do
 
-  scenario "with valida credentials" do
+  scenario "with valid credentials" do
     visit "/"
     click_link "Sign up"
 

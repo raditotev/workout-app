@@ -6,7 +6,7 @@ RSpec.feature "User Sign  In" do
     @john = User.create!(email: "john@example.com", password: "password")
   end
 
-  scenario "with valida credentials" do
+  scenario "with valid credentials" do
     visit "/"
     click_link "Sign in"
 
