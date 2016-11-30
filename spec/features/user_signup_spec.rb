@@ -13,5 +13,7 @@ RSpec.feature "User Signup" do
 
 
     expect(page).to have_content "You have signed up successfully."
+    expect(page).not_to have_link "Sign in"
+    expect(page).not_to have_link "Sign up"
   end
 end

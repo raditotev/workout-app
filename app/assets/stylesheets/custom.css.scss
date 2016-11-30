@@ -47,6 +47,16 @@ body{
   color: #ff0000;
 }
 
+.signed-in-user {
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.signed-in-user .navbar-text {
+  color: #ffffff;
+}
+
+
 // Devise Error Messages
 #error_explanation {
  background-color: #f2dede;
@@ -59,3 +69,4 @@ body{
 #error_explanation h2 {
  font-size: 150%;
 }
+
