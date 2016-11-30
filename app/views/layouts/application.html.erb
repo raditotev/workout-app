@@ -28,7 +28,7 @@
             <li class="active"><%= link_to "Home", root_path %></li>
           </ul>
 
-          <u class="navbar navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Sign up", new_user_registration_path %></li>
             <li><%= link_to "Sign in", new_user_session_path %></li>
             <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
@@ -40,13 +40,13 @@
                 </p>
               </div>
             <% end %>
-          </u>
+          </ul>
         </div>
       </div>
     </nav>
 
-    <div class="row">
-      <div class="col-md-12">
+    <div class="container">
+
         <% flash.each do |key, message| %>
           <div class="text-center alert
                       alert-<%= key == 'notice' ? 'success' : 'danger' %>">
@@ -56,7 +56,7 @@
 
         <%= yield %>
 
-      </div>
+
     </div>
 
   </body>
