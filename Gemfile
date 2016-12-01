@@ -13,6 +13,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '~>3.3.6'
 gem 'jquery-ui-rails', '5.0.5'
 gem 'd3-rails', '4.1.0'
+gem 'will_paginate-bootstrap', '~>1.0.1'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
