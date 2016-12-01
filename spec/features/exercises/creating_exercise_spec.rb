@@ -27,4 +27,20 @@ RSpec.feature "Creating Exercise" do
     expect(exercise.user_id).to eq @john.id
   end
 
+  scenario "with invalid input" do
+    visit root_path
+
+    click_link "My Lounge"
+    click_link "New Workout"
+    expect(page).to have_link "Back"
+
+    click_button "Create Exercise"
+
+    expect(current_path).to eq new_user_exercise_path(@john)
+    expect(page).to have_content("Exercise has not been created")
+   expect(page).to have_content("Duration in min is not a number")
+   expect(page).to have_content("Workout details can't be blank")
+   expect(page).to have_content("Activity date can't be blank")
+  end
+
 end
