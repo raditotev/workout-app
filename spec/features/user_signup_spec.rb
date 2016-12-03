@@ -18,6 +18,11 @@ RSpec.feature "User Signup" do
     expect(page).not_to have_link "Sign in"
     expect(page).not_to have_link "Sign up"
 
+    user = User.last
+    room = user.room
+    room_name = user.full_name.split.join("-")
+    expect(room.name).to eq room_name
+
     visit "/"
     expect(page).to have_content "John Doe"
   end
