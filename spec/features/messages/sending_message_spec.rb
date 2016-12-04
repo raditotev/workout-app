@@ -22,7 +22,7 @@ RSpec.feature "Sending a message" do
     expect(page).to have_content(@room_name)
 
     fill_in "message-field", with: "Hello"
-    click_button "Post"
+    click_button "Send"
 
     expect(page).to have_content("Hello")
 
