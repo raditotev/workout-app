@@ -1,4 +1,4 @@
-<div class="container">
+<div class="<%= content_for(:whole_page) ? 'container-fluid' : 'container' %>">
 
     <% flash.each do |key, message| %>
       <div class="text-center alert
@@ -8,5 +8,6 @@
     <% end %>
 
     <%= yield %>
+    <%= yield :whole_page %>
 
 </div>
