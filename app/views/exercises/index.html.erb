@@ -1,6 +1,6 @@
 <% content_for(:whole_page) do %>
 
-  <div class="col-md-8 col-xs-12">
+  <div class="col-md-7 col-xs-12">
     <% unless @exercises.empty? %>
       <h1>Listing Exercises</h1>
 
@@ -44,8 +44,8 @@
       <%= content_tag :div, "", id: "chart", data: { workouts: @exercises } %>
   </div>
 
-  <div class="col-md-4 col-xs-12">
-    <div id="chat-window">
+  <div class="col-md-5 col-xs-12">
+    <div id="chat-window" class="col-md-12">
       <header class="text-center">
         Chaannel: <%= current_room.name %>
       </header>
@@ -57,17 +57,19 @@
         <% end %>
       </div>
 
-      <div id="chat-box" data-channel="rooms" data-room-id=<%= current_room.id %>>
-        <% @messages.each do |message| %>
-          <%= render partial: 'shared/message', locals: { message: message } %>
-        <% end %>
-      </div>
+      <div class="col-md-10" id="messages-box">
+        <div id="chat-box" data-channel="rooms" data-room-id=<%= current_room.id %>>
+          <% @messages.each do |message| %>
+            <%= render partial: 'shared/message', locals: { message: message } %>
+          <% end %>
+        </div>
 
-      <div id="form-box">
-        <%= form_for @message do |f| %>
-          <%= f.text_field :body, id: "message-field", class: "form-control pull-left" %>
-          <%= f.submit "Send", class: "btn btn-default", id: "post-btn" %>
-        <% end %>
+        <div id="form-box">
+          <%= form_for @message do |f| %>
+            <%= f.text_field :body, id: "message-field", class: "form-control pull-left" %>
+            <%= f.submit "Send", class: "btn btn-default", id: "post-btn" %>
+          <% end %>
+        </div>
       </div>
     </div>
 
