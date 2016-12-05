@@ -47,7 +47,7 @@
   <div class="col-md-5 col-xs-12">
     <div id="chat-window" class="col-md-12">
       <header class="text-center">
-        Chaannel: <%= current_room.name %>
+        Channel: <%= current_room.name %>
       </header>
 
       <div class="col-md-2" id="followers">
@@ -65,7 +65,7 @@
         </div>
 
         <div id="form-box">
-          <%= form_for @message do |f| %>
+          <%= form_for @message, remote: true do |f| %>
             <%= f.text_field :body, id: "message-field", class: "form-control pull-left" %>
             <%= f.submit "Send", class: "btn btn-default", id: "post-btn" %>
           <% end %>
